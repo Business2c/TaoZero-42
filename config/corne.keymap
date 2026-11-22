@@ -34,7 +34,7 @@
 
     slow_layer {
         layers = <SLOW_LAYER>;
-        input-processors = <&zip_xy_scaler 1 4>;   // 0.25x speed
+        input-processors = <&zip_xy_scaler 1 2>;   // 0.5x speed
     };
 
     fast_layer {
@@ -97,9 +97,9 @@
         Mouse {
             bindings = <
 &trans          &trans  &trans     &trans     &trans     &trans    &trans  &mkp MB5        &mmv MOVE_UP    &mkp MB4         &trans  &trans
-&mo SLOW_LAYER  &trans  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
 &trans          &trans  &trans     &trans     &trans     &trans    &trans  &trans          &trans          &trans           &trans  &trans
-                                   &trans     &trans     &mo 8     &trans  &trans          &trans
+                                   &trans     &to SLOW_LAYER     &mo 8     &trans  &trans          &trans
             >;
         };
 
